@@ -19,7 +19,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zvn-rm-alD">
                                 <rect key="frame" x="10" y="98" width="394" height="754"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="QuR-Cy-ESy">
+                                    <searchBar contentMode="redraw" placeholder="Not Working now" translatesAutoresizingMaskIntoConstraints="NO" id="QuR-Cy-ESy">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="130"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
@@ -43,10 +43,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="zvn-rm-alD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Uff-jE-ivW"/>
-                            <constraint firstItem="zvn-rm-alD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="ZaT-7M-bXK"/>
-                            <constraint firstAttribute="trailing" secondItem="zvn-rm-alD" secondAttribute="trailing" constant="10" id="sq6-Op-muF"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zvn-rm-alD" secondAttribute="bottom" constant="10" id="xWG-h8-zwl"/>
+                            <constraint firstItem="zvn-rm-alD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="HAr-XL-N7H"/>
+                            <constraint firstItem="zvn-rm-alD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HlQ-eU-uMr"/>
+                            <constraint firstItem="zvn-rm-alD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="sNi-Qn-Nwm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zvn-rm-alD" secondAttribute="bottom" constant="10" id="ztJ-Ny-3rX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4Ti-BX-ZqZ"/>

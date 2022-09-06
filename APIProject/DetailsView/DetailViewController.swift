@@ -7,19 +7,24 @@
 
 import UIKit
 import SDWebImage
-class DetailViewController: UIViewController{
+
+final class DetailViewController: UIViewController{
     
     @IBOutlet var image: UIImageView!
     @IBOutlet var name: UILabel!
     @IBOutlet var deescription: UILabel!
     
-    var character: Character?
+    var character: Character!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        image.image = image.getImage(urlString: character!.image)
+        setUI()
+    }
+    
+    private func setUI() {
+        image.sd_setImage(with: URL(string: character!.image), placeholderImage: UIImage(contentsOfFile: "loading-image"))
         name.text = character?.name
-        deescription.text = ("This character has a \(character!.hairColor) hair.")
+        deescription.text = ("This character has a \(character!.hairColor) hair, .")
     }
     
 }

@@ -8,15 +8,22 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
-    @IBOutlet weak var modelImage: UIImageView!
-    @IBOutlet weak var modelName: UILabel!
 
+    
+    @IBOutlet var imageUI: UIImageView!
+    @IBOutlet var nameUI: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    func setUp(character: Character!) {
+        nameUI.text = character.name
+        imageUI.sd_setImage(with: URL(string: character!.image), placeholderImage: UIImage(contentsOfFile: "loading-image"))
+    }
+    
 }
