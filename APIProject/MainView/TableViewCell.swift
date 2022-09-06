@@ -7,16 +7,14 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
-    @IBOutlet weak var modelImage: UIImageView!
-    @IBOutlet weak var modelName: UILabel!
+final class TableViewCell: UITableViewCell {
 
+    
+    @IBOutlet private var imageUI: UIImageView!
+    @IBOutlet private var nameUI: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
+    
 }
