@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class ViewController: UIViewController {
 
@@ -24,23 +25,34 @@ final class ViewController: UIViewController {
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         apiManager.delegate = self
         tableView.delegate = self
-        
         tableView.rowHeight = 100
-        
         tableView.dataSource = self
         apiManager.getData()
     }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
+extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         character.count
     }
     
+    /**?
+     
+     @param UITableView
+     @return UITableViewCell
+     
+     **/
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as?  TableViewCell else { fatalError("Cell not find") }
-        cell.setUp(character: character[indexPath.row])
+        let characterSelected = character[indexPath.row]
+        let cell = UITableViewCell()
+        var configuration = cell.defaultContentConfiguration()
+        SDWebImageManager.shared.loadImage(with: URL(string: characterSelected.image), options: .retryFailed, progress: nil) { image, _, _, _, _,  _ in
+            configuration.image = image
+            cell.contentConfiguration = configuration
+        }
+        configuration.text = characterSelected.name
+        cell.contentConfiguration = configuration
         return cell
     }
     
@@ -50,7 +62,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
-    func reloadData(){
+    private func reloadData() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -59,8 +71,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
 }
 
 extension ViewController: ManagerDelegate {
-    func showModelList(characters: [Character]) {
-        character = characters
+    
+    func getCharacter(character: [Character]) {
+        self.character = character
         reloadData()
     }
+    
 }

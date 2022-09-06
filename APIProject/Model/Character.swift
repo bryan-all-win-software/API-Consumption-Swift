@@ -5,8 +5,6 @@
 //  Created by User-P2 on 8/26/22.
 //
 
-//API: https://bobs-burgers-api-ui.herokuapp.com/
-
 import Foundation
 
 struct Character: Decodable {
