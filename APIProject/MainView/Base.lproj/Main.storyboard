@@ -20,15 +20,15 @@
                                 <rect key="frame" x="10" y="98" width="394" height="754"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" placeholder="Not Working now" translatesAutoresizingMaskIntoConstraints="NO" id="QuR-Cy-ESy">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="130"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="269"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3LE-Cx-PA5">
-                                        <rect key="frame" x="0.0" y="130" width="394" height="624"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3LE-Cx-PA5">
+                                        <rect key="frame" x="0.0" y="269" width="394" height="485"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="62" id="YHw-dZ-Jgw">
-                                                <rect key="frame" x="0.0" y="44.5" width="394" height="62"/>
+                                                <rect key="frame" x="0.0" y="49.5" width="394" height="62"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YHw-dZ-Jgw" id="hpE-DJ-CSO">
                                                     <rect key="frame" x="0.0" y="0.0" width="394" height="62"/>
@@ -51,8 +51,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="4Ti-BX-ZqZ"/>
                     <connections>
+                        <outlet property="characterTableView" destination="3LE-Cx-PA5" id="9nx-kA-thI"/>
                         <outlet property="searchBar" destination="QuR-Cy-ESy" id="rRD-S2-XgH"/>
-                        <outlet property="tableView" destination="3LE-Cx-PA5" id="9nx-kA-thI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
